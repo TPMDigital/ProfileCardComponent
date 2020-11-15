@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap);
+$font-stack: 'Kumbh Sans', sans-serif;
+
+//
+// Challenge Primary Colors
+//
+$primary-dark-cyan: hsl(185, 75%, 39%);
+$primary-very-dark-desaturated-blue: hsl(229, 23%, 23%);
+$primary-dark-grayish-blue: hsl(227, 10%, 46%);
+
+//
+// Challenge Neutral Colors
+//
+$neutral-dark-gray: hsl(0, 0%, 59%);
+
+
+// Card Height vars
+$card-header-height: 140px;
+$card-content-height: 140px;
+$card-footer-height: 96px;
+
+// Reset
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font-stack;
+}
+
+body {
+   font-size: 18px;
+   background-color: $primary-dark-cyan;
+   background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+   background-repeat: no-repeat;
+   background-position: top -45rem left -40rem, bottom -45rem right -40rem;
+   height: 100vh;
+}
+
+.container {
+   display: flex;
+   flex-direction: column;
+   height: inherit;
+   justify-content: flex-end;
+}
+
+.attribution {
+   align-self: center;
+   font-weight: 400;
+   padding-bottom: 1rem;
+   justify-self: end;
+}
+
+.card {
+   position: absolute;
+   top: 50%;
+   right: 50%;
+   transform: translate(50%, -50%);
+   width: calc(375px - 48px);
+   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+   &__header {
+      position: relative;
+      height: $card-header-height;
+      background-image: url('../images/bg-pattern-card.svg');
+      border-radius: 18px 18px 0px 0px;
+
+      .head-image {
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         transform: translate(-50%, 50%);
+         border-radius: 50%;
+         width: 98px;
+         height: 98px;
+         border: 4px solid white;
+         img {
+            max-height: 100%;
+            max-width: 100%;
+         }
+      }
+   }
+   &__content {
+      height: $card-content-height;
+      background-color: white;
+
+      >div {
+         height: 100%;
+         text-align: center;      
+
+         h4 {
+            color: $primary-very-dark-desaturated-blue;
+            padding-top: 4rem;
+            font-weight: 700;
+         }
+         p {
+            color: $neutral-dark-gray;
+            padding-top: 12px;
+            font-weight: 400;
+            font-size: 0.9rem;
+         }
+         span {
+            color: $neutral-dark-gray;
+            font-weight: 700;
+         }
+      }
+   }
+   &__footer {
+      height: $card-footer-height;
+      background-color: white;
+      border-top: 1px solid lightgrey;
+      border-radius: 0 0 18px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 28px;
+
+      >div {
+         text-align: center;
+      }
+      h4 {
+         color: $primary-very-dark-desaturated-blue;
+         font-weight: 600;
+         font-size: 1rem;
+         line-height: 1.4;
+      }
+      p {
+         color: $neutral-dark-gray;
+         font-weight: 500;
+         font-size: 0.7rem;
+         padding-top: 4px;
+         letter-spacing: 1px;
+      }
+   }
+}
+
