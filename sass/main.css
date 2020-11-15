@@ -36,8 +36,6 @@ body {
       align-self: center;
   font-weight: 400;
   padding-bottom: 1rem;
-  -ms-grid-column-align: end;
-      justify-self: end;
 }
 
 .card {
